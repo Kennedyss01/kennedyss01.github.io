@@ -1,168 +1,1407 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio - Kennedy Souza</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: #f8f9fa;
-    }
-    header {
-      background: linear-gradient(135deg, #2c3e50, #34495e);
-      color: white;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 3rem;
-      font-weight: bold;
-    }
-    header p {
-      font-size: 1.25rem;
-      margin-top: 0.5rem;
-    }
-    .section-title {
-      color: #2c3e50;
-      border-bottom: 3px solid #2c3e50;
-      display: inline-block;
-      margin-bottom: 1.5rem;
-      padding-bottom: 0.5rem;
-    }
-    footer {
-      background: #2c3e50;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-      margin-top: 2rem;
-    }
-    .card {
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      margin-bottom: 1.5rem;
-    }
-    .nav-link {
-      font-weight: 600;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Currículo profissional de Kennedy Souza - Analista de TI, Suporte Técnico e Infraestrutura.">
+
+    <title>Kennedy Souza | Analista de TI</title>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --dark: #0f172a;
+            --dark-secondary: #172033;
+            --text: #1e293b;
+            --muted: #64748b;
+            --light: #f8fafc;
+            --border: #e2e8f0;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(15, 23, 42, 0.96);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: auto;
+
+            min-height: 70px;
+            padding: 0 24px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: #60a5fa;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            background:
+                radial-gradient(circle at top right, rgba(37, 99, 235, 0.25), transparent 35%),
+                linear-gradient(135deg, #0f172a, #172033);
+
+            color: white;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: auto;
+
+            padding: 90px 24px;
+
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-label {
+            color: #60a5fa;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.7rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #60a5fa;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #cbd5e1;
+            margin-bottom: 22px;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 12px 20px;
+
+            border-radius: 8px;
+
+            font-size: 0.9rem;
+            font-weight: 600;
+
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid #475569;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .hero-contact {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
+            padding: 28px;
+            border-radius: 14px;
+        }
+
+        .hero-contact h3 {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            color: #cbd5e1;
+
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .contact-item i {
+            color: #60a5fa;
+            font-size: 1.1rem;
+        }
+
+        .contact-item a:hover {
+            color: white;
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px 24px;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+        }
+
+        .section-label {
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--dark);
+            margin-top: 5px;
+        }
+
+        .section-description {
+            color: var(--muted);
+            max-width: 700px;
+            margin-top: 10px;
+        }
+
+        /* =========================
+           SOBRE
+        ========================= */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .about-text {
+            color: #475569;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .highlight-box {
+            background: var(--light);
+            border-left: 4px solid var(--primary);
+
+            padding: 24px;
+
+            border-radius: 8px;
+        }
+
+        .highlight-box strong {
+            color: var(--dark);
+        }
+
+        /* =========================
+           COMPETÊNCIAS
+        ========================= */
+
+        .skills {
+            background: var(--light);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: white;
+
+            padding: 28px;
+
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            transition: 0.2s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+        }
+
+        .skill-icon {
+            width: 44px;
+            height: 44px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eff6ff;
+            color: var(--primary);
+
+            border-radius: 10px;
+
+            font-size: 1.3rem;
+
+            margin-bottom: 18px;
+        }
+
+        .skill-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .skill-card li {
+            margin-bottom: 7px;
+        }
+
+        .skill-card li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* =========================
+           EXPERIÊNCIA
+        ========================= */
+
+        .experience {
+            background: white;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+
+            left: 7px;
+            top: 10px;
+            bottom: 10px;
+
+            width: 2px;
+
+            background: var(--border);
+        }
+
+        .job {
+            position: relative;
+
+            padding-left: 38px;
+            margin-bottom: 42px;
+        }
+
+        .job:last-child {
+            margin-bottom: 0;
+        }
+
+        .job::before {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            top: 7px;
+
+            width: 16px;
+            height: 16px;
+
+            background: white;
+            border: 4px solid var(--primary);
+
+            border-radius: 50%;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            margin-bottom: 4px;
+        }
+
+        .job-company {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .job-date {
+            color: var(--muted);
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        .job-role {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+
+            margin-bottom: 12px;
+        }
+
+        .job ul {
+            padding-left: 18px;
+            color: #475569;
+        }
+
+        .job li {
+            margin-bottom: 5px;
+        }
+
+        /* =========================
+           FORMAÇÃO / IDIOMAS
+        ========================= */
+
+        .education {
+            background: var(--light);
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
+
+        .info-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            padding: 28px;
+        }
+
+        .info-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .info-card .institution {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .info-card .date {
+            color: var(--muted);
+            font-size: 0.85rem;
+            margin-top: 4px;
+        }
+
+        .language {
+            display: flex;
+            justify-content: space-between;
+
+            padding: 13px 0;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .language:last-child {
+            border-bottom: none;
+        }
+
+        .language span:last-child {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* =========================
+           CONTATO
+        ========================= */
+
+        .contact {
+            background: var(--dark);
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact .section-description {
+            color: #94a3b8;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+
+            margin-top: 35px;
+        }
+
+        .contact-card {
+            background: var(--dark-secondary);
+
+            border: 1px solid #263249;
+            border-radius: 12px;
+
+            padding: 24px;
+
+            transition: 0.2s;
+        }
+
+        .contact-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-3px);
+        }
+
+        .contact-card i {
+            color: #60a5fa;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .contact-card h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-card p {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            word-break: break-word;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #0a1020;
+            color: #64748b;
+
+            text-align: center;
+
+            padding: 24px;
+
+            font-size: 0.8rem;
+        }
+
+        /* =========================
+           RESPONSIVIDADE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .navbar-container {
+                min-height: 60px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-container {
+                padding: 65px 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.7rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.05rem;
+            }
+
+            .container {
+                padding: 60px 20px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .job-header {
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .job-date {
+                white-space: normal;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                justify-content: center;
+            }
+        }
+
+    </style>
 </head>
+
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Kennedy Souza</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experiencia">Experiência</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#certificados">Certificados</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <!-- =========================
+         NAVBAR
+    ========================= -->
 
-  <!-- Header -->
-  <header>
-    <h1>Kennedy da Silva Souza</h1>
-    <p>Profissional de TI | Suporte, Infraestrutura e Desenvolvimento de Sistemas</p>
-  </header>
+    <nav class="navbar">
 
-  <!-- Sobre -->
-  <section id="sobre" class="container py-5">
-    <h2 class="section-title">Sobre Mim</h2>
-    <p>Sou formado em Análise e Desenvolvimento de Sistemas, com experiência em <strong>suporte técnico de nível 1 e 2</strong>, <strong>infraestrutura de redes</strong> e <strong>manutenção de hardware</strong>. Tenho vivência em órgãos públicos e projetos acadêmicos, onde aprendi a resolver problemas de forma prática e organizada. Meu diferencial é a <strong>proatividade</strong>, a <strong>capacidade de aprendizado rápido</strong> e a busca constante por aprimoramento, especialmente em <em>redes, análise de sistemas e soluções tecnológicas aplicadas ao dia a dia corporativo</em>.</p>
-  </section>
+        <div class="navbar-container">
 
-  <!-- Experiência -->
-  <section id="experiencia" class="container py-5">
-    <h2 class="section-title">Experiência</h2>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5>Prefeitura de Irecê – Setor de Tributos</h5>
-          <p><strong>Maio/2023 – Outubro/2023</strong></p>
-          <p>Atuei apoiando o setor fiscal com soluções tecnológicas e suporte a sistemas tributários. Essa experiência fortaleceu minha visão de como a TI pode otimizar processos administrativos.</p>
+            <a href="#" class="logo">
+                KENNEDY <span>SOUZA</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#competencias">Competências</a></li>
+                <li><a href="#experiencia">Experiência</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5>Secretaria de Saúde de Irecê – Departamento de Tecnologia</h5>
-          <p><strong>Outubro/2023 – Abril/2024</strong></p>
-          <p>Responsável por manutenção de hardware, formatação de máquinas, instalação de impressoras e redes cabeadas. Também atuei na resolução de conflitos de rede e configuração de roteadores (DHCP).</p>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <header class="hero">
+
+        <div class="hero-container">
+
+            <div>
+
+                <div class="hero-label">
+                    Profissional de Tecnologia
+                </div>
+
+                <h1>
+                    Kennedy <span>Souza</span>
+                </h1>
+
+                <div class="hero-subtitle">
+                    Analista de TI | Suporte Técnico | Infraestrutura
+                </div>
+
+                <p class="hero-description">
+                    Formado em Análise e Desenvolvimento de Sistemas, com experiência
+                    em suporte técnico, infraestrutura e sistemas. Perfil analítico,
+                    focado em resolução de problemas, atendimento a usuários e
+                    melhoria de processos.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <!--
+                    IMPORTANTE:
+                    Depois coloque seu PDF no repositório com o nome:
+                    curriculo.pdf
+                    -->
+
+                    <a href="curriculo.pdf"
+                       target="_blank"
+                       class="btn btn-primary">
+
+                        <i class="bi bi-file-earmark-pdf"></i>
+                        Baixar Currículo
+
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/kennedy-da-silva-9a559826b/"
+                       target="_blank"
+                       class="btn btn-outline">
+
+                        <i class="bi bi-linkedin"></i>
+                        LinkedIn
+
+                    </a>
+
+                    <a href="https://github.com/Kennedyss01"
+                       target="_blank"
+                       class="btn btn-outline">
+
+                        <i class="bi bi-github"></i>
+                        GitHub
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTATO RÁPIDO -->
+
+            <div class="hero-contact">
+
+                <h3>Contato</h3>
+
+                <div class="contact-item">
+                    <i class="bi bi-geo-alt"></i>
+                    <span>Irecê - BA</span>
+                </div>
+
+                <div class="contact-item">
+                    <i class="bi bi-telephone"></i>
+                    <a href="tel:+5574999379972">
+                        (74) 99937-9972
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <i class="bi bi-envelope"></i>
+                    <a href="mailto:fundacaokennedy9a@gmail.com">
+                        fundacaokennedy9a@gmail.com
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <i class="bi bi-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/kennedy-da-silva-9a559826b/"
+                       target="_blank">
+                        LinkedIn
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <i class="bi bi-github"></i>
+                    <a href="https://github.com/Kennedyss01"
+                       target="_blank">
+                        GitHub
+                    </a>
+                </div>
+
+            </div>
+
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5>E-commerce (Dropshipping) – Amazon/AliExpress</h5>
-          <p><strong>Maio/2024 – Atual</strong></p>
-          <p>Gerenciamento de pedidos e dados de clientes em plataformas internacionais, otimizando o fluxo de vendas online e desenvolvendo habilidades em sistemas de marketplace.</p>
+
+    </header>
+
+
+    <!-- =========================
+         SOBRE
+    ========================= -->
+
+    <section id="sobre" class="about">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div class="section-label">
+                    Perfil
+                </div>
+
+                <h2 class="section-title">
+                    Sobre mim
+                </h2>
+
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-text">
+
+                    <p>
+                        Sou profissional de TI, formado em Análise e Desenvolvimento
+                        de Sistemas, com experiência prática em suporte técnico,
+                        manutenção, redes e sistemas.
+                    </p>
+
+                    <p>
+                        Tenho perfil analítico, organizado e voltado à resolução
+                        de problemas, com experiência no atendimento a usuários,
+                        configuração de equipamentos e suporte a sistemas
+                        corporativos.
+                    </p>
+
+                    <p>
+                        Busco evoluir profissionalmente nas áreas de suporte,
+                        infraestrutura e análise de TI, enquanto desenvolvo meus
+                        conhecimentos em dados e SQL.
+                    </p>
+
+                </div>
+
+                <div class="highlight-box">
+
+                    <strong>Objetivo profissional</strong>
+
+                    <p style="margin-top: 10px;">
+                        Atuar em TI com foco em suporte técnico, infraestrutura,
+                        sistemas corporativos e análise de informações,
+                        contribuindo para a resolução de problemas e melhoria
+                        dos processos.
+                    </p>
+
+                </div>
+
+            </div>
+
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card p-3">
-          <h5>Espaço Âncora – Apoio Pedagógico</h5>
-          <p><strong>Maio/2025 – Atual</strong></p>
-          <p>Aulas de reforço em matemática para ensino fundamental II, com foco em álgebra e resolução de problemas. Essa atividade aprimorou minhas habilidades de comunicação e liderança.</p>
+
+    </section>
+
+
+    <!-- =========================
+         COMPETÊNCIAS
+    ========================= -->
+
+    <section id="competencias" class="skills">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div class="section-label">
+                    Conhecimentos
+                </div>
+
+                <h2 class="section-title">
+                    Competências Técnicas
+                </h2>
+
+                <p class="section-description">
+                    Principais conhecimentos e ferramentas relacionados à minha
+                    atuação profissional.
+                </p>
+
+            </div>
+
+
+            <div class="skills-grid">
+
+                <!-- SUPORTE -->
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        <i class="bi bi-pc-display"></i>
+                    </div>
+
+                    <h3>Suporte Técnico</h3>
+
+                    <ul>
+                        <li>Hardware e software</li>
+                        <li>Windows</li>
+                        <li>Diagnóstico de problemas</li>
+                        <li>Suporte a usuários</li>
+                        <li>Impressoras e periféricos</li>
+                    </ul>
+
+                </div>
+
+
+                <!-- INFRAESTRUTURA -->
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        <i class="bi bi-diagram-3"></i>
+                    </div>
+
+                    <h3>Infraestrutura</h3>
+
+                    <ul>
+                        <li>Redes cabeadas</li>
+                        <li>Equipamentos de rede</li>
+                        <li>Configuração e manutenção</li>
+                        <li>Instalação de equipamentos</li>
+                        <li>Diagnóstico de conectividade</li>
+                    </ul>
+
+                </div>
+
+
+                <!-- SISTEMAS E DADOS -->
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        <i class="bi bi-database"></i>
+                    </div>
+
+                    <h3>Sistemas e Dados</h3>
+
+                    <ul>
+                        <li>Sistemas corporativos</li>
+                        <li>SQL</li>
+                        <li>Análise e organização de dados</li>
+                        <li>Suporte a sistemas</li>
+                        <li>Pacote Office</li>
+                    </ul>
+
+                </div>
+
+
+                <!-- FERRAMENTAS -->
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        <i class="bi bi-tools"></i>
+                    </div>
+
+                    <h3>Ferramentas</h3>
+
+                    <ul>
+                        <li>Git e GitHub</li>
+                        <li>VS Code</li>
+                        <li>Trello</li>
+                        <li>Microsoft Office</li>
+                        <li>Ferramentas de suporte remoto</li>
+                    </ul>
+
+                </div>
+
+
+                <!-- SISTEMAS -->
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        <i class="bi bi-window-stack"></i>
+                    </div>
+
+                    <h3>Sistemas</h3>
+
+                    <ul>
+                        <li>Instalação de softwares</li>
+                        <li>Configuração de sistemas</li>
+                        <li>Atualização de aplicações</li>
+                        <li>Suporte a plataformas corporativas</li>
+                        <li>Administração de sistemas</li>
+                    </ul>
+
+                </div>
+
+
+                <!-- PERFIL -->
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        <i class="bi bi-lightbulb"></i>
+                    </div>
+
+                    <h3>Perfil Profissional</h3>
+
+                    <ul>
+                        <li>Resolução de problemas</li>
+                        <li>Organização</li>
+                        <li>Atendimento a usuários</li>
+                        <li>Aprendizado contínuo</li>
+                        <li>Melhoria de processos</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Projetos -->
-  <section id="projetos" class="container py-5">
-    <h2 class="section-title">Projetos</h2>
-    <div class="card p-3">
-      <h5>Projetos Acadêmicos</h5>
-      <p>Desenvolvimento de sistemas em C, Java e SQL, documentação com UML e criação de páginas web em HTML e CSS. Utilização de ambientes como Replit, NetBeans e VS Code para experimentos práticos.</p>
-      <p><a href="https://github.com/Kennedyss01" target="_blank" class="btn btn-primary btn-sm">Veja no GitHub</a></p>
-    </div>
-  </section>
+    </section>
 
-  <!-- Certificados -->
-<section id="certificados" class="container py-5">
-  <h2 class="section-title">Certificados</h2>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="card p-3">
-        <h5>Capacitação em Redes 5G – UFBA</h5>
-        <p><strong>40 horas</strong> | Concluído em Outubro/2023</p>
-        <a href="certificados/redes-5g.pdf" target="_blank" class="btn btn-outline-primary btn-sm">Visualizar</a>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card p-3">
-        <h5>Power BI Express – Simplifica</h5>
-        <p><strong>Curso Introdutório</strong> | Concluído em 2023</p>
-        <a href="certificados/power-bi-express.pdf" target="_blank" class="btn btn-outline-primary btn-sm">Visualizar</a>
-      </div>
-    </div>
-  </div>
-</section>
 
-  <!-- Contato -->
-  <section id="contato" class="container py-5">
-    <h2 class="section-title">Contato</h2>
-    <ul class="list-unstyled">
-      <li>Email: <a href="mailto:fundacaokennedy9a@gmail.com">fundacaokennedy9a@gmail.com</a></li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/kennedy-da-silva-9a559826b/" target="_blank">Meu LinkedIn</a></li>
-      <li>GitHub: <a href="https://github.com/Kennedyss01" target="_blank">Meu GitHub</a></li>
-    </ul>
-  </section>
+    <!-- =========================
+         EXPERIÊNCIA
+    ========================= -->
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Kennedy Souza - Portfólio</p>
-  </footer>
+    <section id="experiencia" class="experience">
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="container">
+
+            <div class="section-header">
+
+                <div class="section-label">
+                    Trajetória
+                </div>
+
+                <h2 class="section-title">
+                    Experiência Profissional
+                </h2>
+
+            </div>
+
+
+            <div class="timeline">
+
+
+                <!-- PROSAÚDE -->
+
+                <article class="job">
+
+                    <div class="job-header">
+
+                        <div class="job-company">
+                            Grupo ProSaúde
+                        </div>
+
+                        <div class="job-date">
+                            Dez/2025 – Set/2026
+                        </div>
+
+                    </div>
+
+                    <div class="job-role">
+                        Analista de TI
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            Suporte a usuários, computadores e periféricos.
+                        </li>
+
+                        <li>
+                            Administração e suporte a sistemas e plataformas
+                            corporativas.
+                        </li>
+
+                        <li>
+                            Configuração e suporte a dispositivos móveis.
+                        </li>
+
+                        <li>
+                            Instalação, configuração e atualização de softwares.
+                        </li>
+
+                        <li>
+                            Diagnóstico e resolução de problemas de hardware,
+                            software e sistemas.
+                        </li>
+
+                        <li>
+                            Avaliação de soluções para melhoria dos processos
+                            de TI.
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+                <!-- SECRETARIA DE SAÚDE -->
+
+                <article class="job">
+
+                    <div class="job-header">
+
+                        <div class="job-company">
+                            Secretaria Municipal de Saúde de Irecê
+                        </div>
+
+                        <div class="job-date">
+                            Out/2023 – Abr/2024
+                        </div>
+
+                    </div>
+
+                    <div class="job-role">
+                        Estagiário / Auxiliar de TI — Departamento de Tecnologia
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            Manutenção e configuração de computadores e
+                            periféricos.
+                        </li>
+
+                        <li>
+                            Instalação e manutenção de redes cabeadas.
+                        </li>
+
+                        <li>
+                            Instalação e configuração de softwares e
+                            equipamentos.
+                        </li>
+
+                        <li>
+                            Diagnóstico de problemas de hardware e software.
+                        </li>
+
+                        <li>
+                            Suporte técnico aos usuários.
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+                <!-- PREFEITURA -->
+
+                <article class="job">
+
+                    <div class="job-header">
+
+                        <div class="job-company">
+                            Prefeitura Municipal de Irecê
+                        </div>
+
+                        <div class="job-date">
+                            Mai/2023 – Out/2023
+                        </div>
+
+                    </div>
+
+                    <div class="job-role">
+                        Estagiário / Auxiliar Administrativo — Setor de Tributos
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            Apoio em sistemas administrativos e tributários.
+                        </li>
+
+                        <li>
+                            Consulta, atualização e conferência de dados.
+                        </li>
+
+                        <li>
+                            Apoio às rotinas administrativas do setor.
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FORMAÇÃO
+    ========================= -->
+
+    <section id="formacao" class="education">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div class="section-label">
+                    Formação
+                </div>
+
+                <h2 class="section-title">
+                    Formação e Idiomas
+                </h2>
+
+            </div>
+
+
+            <div class="education-grid">
+
+
+                <!-- FORMAÇÃO -->
+
+                <div class="info-card">
+
+                    <h3>
+                        Tecnologia em Análise e Desenvolvimento de Sistemas
+                    </h3>
+
+                    <div class="institution">
+                        UNICESUMAR
+                    </div>
+
+                    <div class="date">
+                        Concluído em 2024
+                    </div>
+
+                    <p style="margin-top: 18px; color: #64748b;">
+                        Graduação iniciada no IFBA — Campus Irecê,
+                        posteriormente continuada na UNICESUMAR.
+                    </p>
+
+                </div>
+
+
+                <!-- IDIOMAS -->
+
+                <div class="info-card">
+
+                    <h3 style="margin-bottom: 18px;">
+                        Idiomas
+                    </h3>
+
+                    <div class="language">
+
+                        <span>Inglês</span>
+
+                        <span>Avançado</span>
+
+                    </div>
+
+                    <div class="language">
+
+                        <span>Espanhol</span>
+
+                        <span>Intermediário</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTATO
+    ========================= -->
+
+    <section id="contato" class="contact">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div class="section-label">
+                    Vamos conversar
+                </div>
+
+                <h2 class="section-title">
+                    Contato
+                </h2>
+
+                <p class="section-description">
+                    Estou aberto a oportunidades nas áreas de suporte técnico,
+                    infraestrutura e análise de TI.
+                </p>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+
+                <!-- EMAIL -->
+
+                <a href="mailto:fundacaokennedy9a@gmail.com"
+                   class="contact-card">
+
+                    <i class="bi bi-envelope"></i>
+
+                    <h3>E-mail</h3>
+
+                    <p>
+                        fundacaokennedy9a@gmail.com
+                    </p>
+
+                </a>
+
+
+                <!-- LINKEDIN -->
+
+                <a href="https://www.linkedin.com/in/kennedy-da-silva-9a559826b/"
+                   target="_blank"
+                   class="contact-card">
+
+                    <i class="bi bi-linkedin"></i>
+
+                    <h3>LinkedIn</h3>
+
+                    <p>
+                        Meu perfil profissional
+                    </p>
+
+                </a>
+
+
+                <!-- GITHUB -->
+
+                <a href="https://github.com/Kennedyss01"
+                   target="_blank"
+                   class="contact-card">
+
+                    <i class="bi bi-github"></i>
+
+                    <h3>GitHub</h3>
+
+                    <p>
+                        Meus projetos e códigos
+                    </p>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Kennedy Souza · Analista de TI · Irecê - BA
+        </p>
+
+    </footer>
+
+
 </body>
+
 </html>
